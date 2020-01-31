@@ -15,7 +15,7 @@ public class CameraMovementComponent : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = (player2.position + player1.position) + cameraOffset;
+      //  transform.position = (player2.position + player1.position) + cameraOffset;
        // Debug.Log(transform.position);
     }
 

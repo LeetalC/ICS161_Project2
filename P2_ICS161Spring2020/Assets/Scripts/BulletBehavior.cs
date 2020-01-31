@@ -6,7 +6,7 @@ public class BulletBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float speed = 25.0f;
+    private float speed = 1.0f;
     
     [SerializeField]
     private float damage = 100.0f;
@@ -31,7 +31,6 @@ public class BulletBehavior : MonoBehaviour
             aPlayer.TakeDamage(GetDamage());
 
         }
-        //if(collider.gameObject.name != "Player")
         Destroy(gameObject);    //destroys bullet
 
 

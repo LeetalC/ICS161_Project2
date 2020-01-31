@@ -11,21 +11,27 @@ public class AttackManager : MonoBehaviour
     private GameObject Bullet;
 
     [SerializeField]
-    private GameObject player1;
+    private GameObject player;
+    private KeyCode playerAttackButton;
+
     [SerializeField]
-
-    private GameObject player2;
-
-
+    private PlayerStatManager aPlayer;
+    void Start()
+    {
+        AssignControls();
+    }
     void Update()
     {
-        if(Input.GetKeyDown("space")) Shoot();
-        if(Input.GetKey(KeyCode.RightArrow)) Shoot();
+        if(Input.GetKeyDown(playerAttackButton)) Shoot();
     }
-    
+    void AssignControls() 
+    {
+        if(player.name == "Player1") playerAttackButton = KeyCode.Space;
+        else playerAttackButton = KeyCode.Period;
+    }
     void Shoot() 
     {
         Instantiate(Bullet, firingPoint.position, firingPoint.transform.rotation);
-        //i would like to change the material of each bullet
+        Bullet.transform.GetChild(0).GetComponent<MeshRenderer>().material = aPlayer.GetColor();
     }
 }

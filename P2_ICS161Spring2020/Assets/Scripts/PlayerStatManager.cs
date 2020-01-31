@@ -7,33 +7,69 @@ public class PlayerStatManager : MonoBehaviour
     private float health;  //currently, bullet does 100.0f damage so it one-shots enemies
     private float damageRecieved;
     private bool isDead;
+    [SerializeField]    
     private Vector3 startingPosition;
+
+    [SerializeField]
     private Quaternion startingRotation;
 
     [SerializeField]
+    private Transform playerTransform;
+
+    [SerializeField]
     private GameObject player;
-   
+    private GameObject[] colorableParts;
+
+    [SerializeField]
+    private Material color;
 
     void Start()
     {
-        startingPosition = player.GetComponent<Transform>().position;
-        startingRotation = player.GetComponent<Transform>().rotation;
-        Debug.Log("YOLO" + startingPosition);
+        StatInit();
+        AssignColor();
+    }
+    private void StatInit() 
+    {
+        startingPosition = playerTransform.GetComponent<Transform>().position;
+        startingRotation = playerTransform.GetComponent<Transform>().rotation;
         health = 100.0f;
         isDead = false;
     }
+    private void AssignColor()
+    {
+        foreach(Transform child in transform)
+        {
+            if(child.tag == "ColorablePart")
+            {
+                child.GetComponent<MeshRenderer>().material = color;
+            }
+        }
+    }
+    public Material GetColor()
+    {
+        return color;
+    }
+
     public void TakeDamage(float damageRecieved)
     {
         health -= damageRecieved;
         if (health <= 0.0f)
         {
             isDead = true;
-            Resurrect();
+            Die();
         }
+    }
+    void Die() 
+    {    
+        Debug.Log(player.name + " has died!");
+        Resurrect();
     }
 
     public void Resurrect()
     {
-       // Instantiate(player, startingPosition, Quaternion.Identity);
+       playerTransform.position = startingPosition;
+       playerTransform.rotation = startingRotation;
     }
+
+    
 }

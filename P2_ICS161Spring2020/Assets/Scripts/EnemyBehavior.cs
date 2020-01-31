@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//THIS SCRIPT IS OBSOLETE BECAUSE THERE ARE NO LONGER STATIC ENEMY TARGETS
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField]

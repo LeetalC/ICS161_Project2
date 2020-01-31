@@ -13,59 +13,50 @@ public class PlayerMovementManager : MonoBehaviour
     private Rigidbody playerRigidBody;
 
     [SerializeField]
-    private int playerNumber;
+    private GameObject player;
+
+    private KeyCode[] player1Controls = {KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D};
+    private KeyCode[] player2Controls = {KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow};
+    private KeyCode[] thisPlayersControls;
+
 
     void Start()
     {
         speed = 5.0f;
+        AssignControls();
     }
 
     // Player can only move in the four cardinal directions. 
     void Update()
     {
-        if(playerNumber == 1) {
-            MoveCharacter1();
-        }
-        if(playerNumber == 2) {
-            MoveCharacter2();
-        }
-
+        MoveCharacter();
     }
-
-    private void MoveCharacter(Vector3 eulerVec) {
+    private void AssignControls()
+    {
+        if (player.name == "Player1") thisPlayersControls = player1Controls;
+        else thisPlayersControls = player2Controls;
+    }
+    private void MoveCharacterHelper(Vector3 eulerVec) {
         transform.rotation = Quaternion.Euler(eulerVec);
         transform.position += transform.forward * Time.deltaTime * speed;
     }
 
-    private void MoveCharacter1(){
-        if (Input.GetKey(KeyCode.W)) {
-            MoveCharacter(new Vector3(0, 0, 0));
+    private void MoveCharacter(){
+        if (Input.GetKey(thisPlayersControls[0])) 
+        {
+            MoveCharacterHelper(new Vector3(0, 0, 0));
         }
-        else if(Input.GetKey(KeyCode.S)) {
-            MoveCharacter(new Vector3(0, -180, 0));
+        else if(Input.GetKey(thisPlayersControls[1])) 
+        {
+            MoveCharacterHelper(new Vector3(0, -180, 0));
         }
-        else if (Input.GetKey(KeyCode.A)){
-            MoveCharacter(new Vector3(0, -90, 0));
+        else if (Input.GetKey(thisPlayersControls[2]))
+        {
+            MoveCharacterHelper(new Vector3(0, -90, 0));
         }
-        else if(Input.GetKey(KeyCode.D)) {
-            MoveCharacter(new Vector3(0, 90, 0));
-
-        }
-    }
-
-     private void MoveCharacter2(){
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            MoveCharacter(new Vector3(0, 0, 0));
-        }
-        else if(Input.GetKey(KeyCode.DownArrow)) {
-            MoveCharacter(new Vector3(0, -180, 0));
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow)){
-            MoveCharacter(new Vector3(0, -90, 0));
-        }
-        else if(Input.GetKey(KeyCode.RightArrow)) {
-            MoveCharacter(new Vector3(0, 90, 0));
-
+        else if(Input.GetKey(thisPlayersControls[3])) 
+        {
+            MoveCharacterHelper(new Vector3(0, 90, 0));
         }
     }
 
