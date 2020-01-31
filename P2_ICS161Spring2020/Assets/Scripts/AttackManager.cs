@@ -10,28 +10,31 @@ public class AttackManager : MonoBehaviour
     [SerializeField]
     private GameObject Bullet;
 
-    [SerializeField]
-    private GameObject player;
     private KeyCode playerAttackButton;
+    static bool controlsAssigned = false;
 
-    [SerializeField]
-    private PlayerStatManager aPlayer;
     void Start()
     {
         AssignControls();
     }
+
     void Update()
     {
-        if(Input.GetKeyDown(playerAttackButton)) Shoot();
+        if (Input.GetKeyDown(playerAttackButton)) Shoot();
     }
     void AssignControls() 
     {
-        if(player.name == "Player1") playerAttackButton = KeyCode.Space;
+        if (controlsAssigned == false)
+        {
+            playerAttackButton = KeyCode.Space;
+            controlsAssigned = true;
+        }
         else playerAttackButton = KeyCode.Period;
     }
     void Shoot() 
     {
         Instantiate(Bullet, firingPoint.position, firingPoint.transform.rotation);
-        Bullet.transform.GetChild(0).GetComponent<MeshRenderer>().material = aPlayer.GetColor();
+        Bullet.transform.GetChild(0).GetComponent<MeshRenderer>().material = gameObject.GetComponent<PlayerStatManager>().GetColor();
+
     }
 }

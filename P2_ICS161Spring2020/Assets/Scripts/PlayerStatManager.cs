@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class PlayerStatManager : MonoBehaviour
 {
+ 
     private float health;  //currently, bullet does 100.0f damage so it one-shots enemies
     private float damageRecieved;
-    private bool isDead;
-    [SerializeField]    
+    
     private Vector3 startingPosition;
-
-    [SerializeField]
     private Quaternion startingRotation;
 
-    [SerializeField]
-    private Transform playerTransform;
-
-    [SerializeField]
-    private GameObject player;
     private GameObject[] colorableParts;
 
     [SerializeField]
@@ -28,13 +21,14 @@ public class PlayerStatManager : MonoBehaviour
         StatInit();
         AssignColor();
     }
+
     private void StatInit() 
     {
-        startingPosition = playerTransform.GetComponent<Transform>().position;
-        startingRotation = playerTransform.GetComponent<Transform>().rotation;
+        startingPosition = transform.GetComponent<Transform>().position;
+        startingRotation = transform.GetComponent<Transform>().rotation;
         health = 100.0f;
-        isDead = false;
     }
+
     private void AssignColor()
     {
         foreach(Transform child in transform)
@@ -55,20 +49,19 @@ public class PlayerStatManager : MonoBehaviour
         health -= damageRecieved;
         if (health <= 0.0f)
         {
-            isDead = true;
             Die();
         }
     }
     void Die() 
     {    
-        Debug.Log(player.name + " has died!");
+        Debug.Log(gameObject.name + " has died!");
         Resurrect();
     }
 
     public void Resurrect()
     {
-       playerTransform.position = startingPosition;
-       playerTransform.rotation = startingRotation;
+       transform.position = startingPosition;
+       transform.rotation = startingRotation;
     }
 
     
