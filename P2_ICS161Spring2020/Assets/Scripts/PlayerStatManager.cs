@@ -34,6 +34,6 @@ public class PlayerStatManager : MonoBehaviour
 
     public void Resurrect()
     {
-        Instantiate(player, startingPosition, Quaternion.Identity);
+       // Instantiate(player, startingPosition, Quaternion.Identity);
     }
 }

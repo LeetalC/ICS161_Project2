@@ -94,8 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -178,7 +178,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -270,7 +269,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -368,7 +366,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -449,7 +446,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -750,7 +746,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -792,36 +787,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1206245027111773244, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
-    - target: {fileID: 1206245027135779143, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
     - target: {fileID: 1206245027319827938, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_Name
       value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206245027319827939, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206245027319827964, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: Bullet
-      value: 
-      objectReference: {fileID: 3630852296886014131, guid: 083eb4fdb7753444ebeb8492fec5f3f3,
-        type: 3}
-    - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: playerNumber
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -878,6 +847,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1206245027111773244, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
+    - target: {fileID: 1206245027135779143, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
+    - target: {fileID: 1206245027319827939, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206245027319827964, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 3630852296886014131, guid: 083eb4fdb7753444ebeb8492fec5f3f3,
+        type: 3}
+    - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1206245028351419534, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -897,25 +892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1206245027111773244, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
-    - target: {fileID: 1206245027135779143, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
     - target: {fileID: 1206245027319827938, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_Name
       value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
-        type: 3}
-      propertyPath: playerNumber
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -971,6 +951,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206245027111773244, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
+    - target: {fileID: 1206245027135779143, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
+    - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
+        type: 3}
+      propertyPath: playerNumber
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206245028351419534, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -1041,7 +1036,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
