@@ -7,9 +7,7 @@ public class BulletBehavior : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float speed = 25.0f;
-    
-    [SerializeField]
-    private float damage = 100.0f;
+    private float damage = 50.0f;
 
 
     void Start()

@@ -331,10 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3212030014252b41bc12163faa4b89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0, w: 0}
-  playerTransform: {fileID: 1206245027319827966}
-  player: {fileID: 1206245027319827938}
   color: {fileID: 0}
 --- !u!114 &1206245027319827965
 MonoBehaviour:
@@ -349,8 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  playerRigidBody: {fileID: 1206245027319827939}
-  player: {fileID: 1206245027319827938}
+  cam: {fileID: 0}
 --- !u!114 &1206245027319827964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 3828183718457395896}
   Bullet: {fileID: 3630852296886014131, guid: 083eb4fdb7753444ebeb8492fec5f3f3, type: 3}
-  player: {fileID: 1206245027319827938}
-  aPlayer: {fileID: 983232596682157665}
 --- !u!54 &1206245027319827939
 Rigidbody:
   m_ObjectHideFlags: 0

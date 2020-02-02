@@ -9,29 +9,24 @@ public class PlayerMovementManager : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    private KeyCode[] player1Controls = {KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D};
+    [SerializeField]
+    private Camera cam;
+
+
+    private KeyCode[] player1Controls = {KeyCode.S, KeyCode.W, KeyCode.D, KeyCode.A};
     private KeyCode[] player2Controls = {KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow};
     private KeyCode[] thisPlayersControls;
     static bool controlsAssigned = false;
 
-    enum Directions
-    {
-        North = 0,
-        South = -180,
-        Right = -90,
-        Left = 90
-
-    }
 
     void Start()
     {
-
         speed = 5.0f;
         AssignControls();
     } 
-
     void Update()
     {
+
         MoveCharacter();
     }
 
@@ -45,10 +40,8 @@ public class PlayerMovementManager : MonoBehaviour
         else thisPlayersControls = player2Controls;
     }
     private void MoveCharacterHelper(Vector3 rot) {
-
-        //transform.rotation = Quaternion.Euler(rot);
         transform.position += transform.forward * Time.deltaTime * speed;
-         transform.rotation = Quaternion.Euler(rot);
+        transform.rotation = Quaternion.Euler(rot);
     }
 
     private void MoveCharacter(){

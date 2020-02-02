@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerStatManager : MonoBehaviour
 {
  
-    private float health;  //currently, bullet does 100.0f damage so it one-shots enemies
+    private float health;  //currently, bullet does 50.0f damage so it one-shots enemies
     private float damageRecieved;
-    
     private Vector3 startingPosition;
     private Quaternion startingRotation;
 
@@ -47,6 +46,7 @@ public class PlayerStatManager : MonoBehaviour
     public void TakeDamage(float damageRecieved)
     {
         health -= damageRecieved;
+        Debug.Log(gameObject.name + " has taken " + damageRecieved + " damage.");
         if (health <= 0.0f)
         {
             Die();
@@ -60,8 +60,10 @@ public class PlayerStatManager : MonoBehaviour
 
     public void Resurrect()
     {
+       health = 100.0f;
        transform.position = startingPosition;
        transform.rotation = startingRotation;
+      
     }
 
     
