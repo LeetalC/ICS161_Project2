@@ -9,9 +9,6 @@ public class PlayerMovementManager : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    [SerializeField]
-    private Camera cam;
-
 
     private KeyCode[] player1Controls = {KeyCode.S, KeyCode.W, KeyCode.D, KeyCode.A};
     private KeyCode[] player2Controls = {KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow};

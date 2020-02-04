@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     private float speed = 25.0f;
     private float damage = 50.0f;
 
+    public GameObject instantiator;
 
     void Start()
     {
@@ -17,14 +17,11 @@ public class BulletBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        // Debug.Log(collider.gameObject.name);
         PlayerStatManager enemyPlayer = collider.GetComponent<PlayerStatManager>();
-        if (enemyPlayer != null)
+        if (enemyPlayer != null && collider != instantiator.GetComponent<Collider>())
         {
             enemyPlayer.TakeDamage(damage);
         }
         Destroy(gameObject);    //destroys bullet
-
-
     }
 }

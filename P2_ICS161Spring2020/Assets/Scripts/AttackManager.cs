@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* This script is used by each player. It assigns each player a shoot keybinding, 
-allows players to actually shoot, and handles where bullets are coming from*/
+/* This script is used by each player. 
+1. It assigns each player a 'shoot' keybinding, 
+2. Instantiates bullets with 'Shoot()'*/
 public class AttackManager : MonoBehaviour
 {
     [SerializeField]
@@ -35,7 +36,9 @@ public class AttackManager : MonoBehaviour
     }
     void Shoot() 
     {
+        Bullet.GetComponent<BulletBehavior>().instantiator = gameObject;
         Bullet.transform.GetChild(0).GetComponent<MeshRenderer>().material = gameObject.GetComponent<PlayerStatManager>().GetColor();
         Instantiate(Bullet, firingPoint.position, firingPoint.transform.rotation);
+
     }
 }
