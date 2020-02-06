@@ -6,7 +6,7 @@ public class BulletBehavior : MonoBehaviour
 {
     [SerializeField]
     private float speed = 25.0f;
-    private float damage = 50.0f;
+    private float damage = 25.0f;
 
     public GameObject instantiator;
 

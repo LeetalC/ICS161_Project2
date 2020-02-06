@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField]
     private Material color;
 
+    [SerializeField]
+    private Text healthText;
+
     void Start()
     {
         StatInit();
@@ -25,7 +29,7 @@ public class PlayerStatManager : MonoBehaviour
     {
         startingPosition = transform.GetComponent<Transform>().position;
         startingRotation = transform.GetComponent<Transform>().rotation;
-        health = 100.0f;
+        UpdateHealth(100.0f);
     }
 
     private void AssignColor()
@@ -45,7 +49,7 @@ public class PlayerStatManager : MonoBehaviour
 
     public void TakeDamage(float damageRecieved)
     {
-        health -= damageRecieved;
+        UpdateHealth(health - damageRecieved);
         Debug.Log(gameObject.name + " has taken " + damageRecieved + " damage.");
         if (health <= 0.0f)
         {
@@ -60,10 +64,16 @@ public class PlayerStatManager : MonoBehaviour
 
     public void Resurrect()
     {
-       health = 100.0f;
+       UpdateHealth(100.0f);
        transform.position = startingPosition;
        transform.rotation = startingRotation;
       
+    }
+
+    private void UpdateHealth(float hp)
+    {
+        health = hp;
+        healthText.text = health.ToString();
     }
 
     
