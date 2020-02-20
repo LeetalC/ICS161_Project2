@@ -8,7 +8,7 @@ public class BulletBehavior : MonoBehaviour
     private float speed = 25.0f;
     private float damage = 25.0f;
 
-    public GameObject instantiator;
+    public GameObject instantiator; //the player that fired the bullet
 
     void Start()
     {

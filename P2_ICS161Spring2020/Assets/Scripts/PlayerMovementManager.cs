@@ -24,7 +24,6 @@ public class PlayerMovementManager : MonoBehaviour
     } 
     void Update()
     {
-
         MoveCharacter();
     }
 

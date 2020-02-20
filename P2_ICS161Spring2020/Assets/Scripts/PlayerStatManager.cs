@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PlayerStatManager : MonoBehaviour
 {
  
-    private float health;  //currently, bullet does 50.0f damage so it one-shots enemies
+    private float health;  //bullet does 25 dmg
     private float damageRecieved;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
 
-    private GameObject[] colorableParts;
+    private GameObject[] colorableParts;    //this is a Tag i made in the game, it determines which parts of the player can be colored
 
     [SerializeField]
     private Material color;
@@ -50,7 +50,6 @@ public class PlayerStatManager : MonoBehaviour
     public void TakeDamage(float damageRecieved)
     {
         UpdateHealth(health - damageRecieved);
-        Debug.Log(gameObject.name + " has taken " + damageRecieved + " damage.");
         if (health <= 0.0f)
         {
             Die();

@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* This script is used by each player. 
-1. It assigns each player a 'shoot' keybinding, 
-2. Instantiates bullets with 'Shoot()'*/
+
 public class AttackManager : MonoBehaviour
 {
     [SerializeField]
-    private Transform firingPoint;
+    private Transform firingPoint;  //where bullets will spawn
     
     [SerializeField]
     private GameObject Bullet;
@@ -32,7 +30,7 @@ public class AttackManager : MonoBehaviour
             playerAttackButton = KeyCode.Space;
             controlsAssigned = true;
         }
-        else playerAttackButton = KeyCode.RightControl;
+        else playerAttackButton = KeyCode.Period;
     }
     void Shoot() 
     {

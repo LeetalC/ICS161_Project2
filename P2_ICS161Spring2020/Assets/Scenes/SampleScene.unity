@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 400374737}
   - component: {fileID: 400374736}
   m_Layer: 0
-  m_Name: Camera1
+  m_Name: Camera2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +540,7 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5
+    y: 0
     width: 1
     height: 0.5
   near clip plane: 0.3
@@ -1195,7 +1195,7 @@ PrefabInstance:
     - target: {fileID: 1206245027319827938, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_Name
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -1235,7 +1235,7 @@ PrefabInstance:
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -1261,12 +1261,12 @@ PrefabInstance:
         type: 3}
       propertyPath: color
       value: 
-      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
+      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
     - target: {fileID: 983232596682157665, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 737483300}
+      objectReference: {fileID: 416938610}
     - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: theCam
@@ -1385,7 +1385,7 @@ PrefabInstance:
     - target: {fileID: 1206245027319827938, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -1425,7 +1425,7 @@ PrefabInstance:
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1206245027319827966, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
@@ -1461,12 +1461,12 @@ PrefabInstance:
         type: 3}
       propertyPath: color
       value: 
-      objectReference: {fileID: 2100000, guid: fc1b00a03ef7570479652a708720c1e5, type: 2}
+      objectReference: {fileID: 2100000, guid: 788f07ecc109cdd4ab1e34bc364db0ad, type: 2}
     - target: {fileID: 983232596682157665, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 416938610}
+      objectReference: {fileID: 737483300}
     - target: {fileID: 1206245027319827965, guid: 9c0721fc39846a84d82e1b80e6777687,
         type: 3}
       propertyPath: theCam
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 1959037910}
   - component: {fileID: 1959037909}
   m_Layer: 0
-  m_Name: Camera2
+  m_Name: Camera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,7 +1690,7 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.5
     width: 1
     height: 0.5
   near clip plane: 0.3
